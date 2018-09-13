@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rozdział 04 - gra</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body id="all">
+    <div class="game">
+        <p class="header">zagraj w papier/kamień/nożyce z komputerem!</p>
+        <br><br>
+        <div class="game-div">
+                <button class="button" id="newgame-button">nowa gra</button>
+            </div>
+        <br><br>
+        <div class="header">liczba wygranych rund kończąca grę: <a id="ilosc-rund">0</a></div>
+        <br><br>
+        <div class="container">
+           <p>wybierz opcję zagrywki:</p>
+            <div class="all-buttons">
+                <button class="button" id="first-button">kamień</button>
+            </div>
+            <div class="all-buttons">
+                <button class="button" id="second-button">nożyce</button>
+            </div>
+            <div class="all-buttons">
+                <button class="button" id="third-button">papier</button>
+            </div>
+        </div>
+        <div class="container compchoice">
+        <p>wybór komputera to:</p>
+        <div id="comp-choice"></div>
+        </div>
+
+        <div class="container wyniki">
+        <p>Aktualny wynik:</p>
+        <p>User points: <a id="user-points">0</a></p>
+        <p>Comp points: <a id="comp-points">0</a></p>
+        </div>
+        <div id="opis-rozgrywki"></div>
+
+    </div>
+
+
+
+    <script src="main2.js"></script>
+</body>
+
+</html>

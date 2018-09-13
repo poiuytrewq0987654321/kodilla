@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 5px;
+}
+
+.game {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 580px;
+    margin-top: 100px;
+}
+
+.game-div{
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+
+.header {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    width: 100px;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    color: #fff;
+    background-color: #02ac46;
+    border: 2px solid #02ac46;
+    border-radius: 4px;
+
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    margin: 5px;
+}
+
+.container {
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    height: 150px;
+    margin:2px;
+}
+
+#comp-choice {
+    text-align: center;
+    font-size: 35px;
+    color: firebrick;
+    padding: 10px;
+    font-weight: 900;
+}
+
+#user-points,
+#comp-points {
+    font-size: 35px;
+    color:darkviolet;
+    padding: 10px;
+    font-weight: 900;
+}
+
+#opis-rozgrywki{
+    text-align: center;
+    color:#000;
+    font-size: 25px;
+    font-weight: bold;
+}
