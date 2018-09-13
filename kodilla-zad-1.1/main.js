@@ -37,33 +37,27 @@ var highlighted = 'highlighted';
 var important = 'important';
 var specialHeader = 'special-header';
 
-
+var boxList;
+var body = document.getElementById('body');
 
 //tworzenie boxów z id
 
 function boxCreate() {
     for (var i = 1; i < 6; i++) {
-        var body = document.getElementById('body');
+
         var box = '<div class="box"><div class="header"></div><div class="box-content"></div></div>';
         body.innerHTML = box + body.innerHTML;
     };
 }
 boxCreate();
 
-//rozłożenie danych z Data na poszczególne obiekty i dodanie id
-
-/*    for (var i = 0; i < 5; i++) {
-        var boxList = document.querySelectorAll('.box')[i];
-        boxList.id = "box" + (i+1);
-    };*/
-
-
-
+//rozłożenie danych z Data na poszczególne obiekty i dodanie: id/content/header
 
 function sepData() {
     for (var i = 0; i < 5; i++) {
         var dataObject = data[i];
-        var boxList = document.querySelectorAll('.box')[i];
+
+        boxList = document.querySelectorAll('.box')[i];
         boxList.id = dataObject.id;
 
         var headerList = document.querySelectorAll('.header')[i];
@@ -72,19 +66,26 @@ function sepData() {
         var contentList = document.querySelectorAll('.box-content')[i];
         contentList.innerHTML = dataObject.content;
     };
-    
-    
-    for (var i = 0; i < 5; i++) {
-        var dataObject = data[i];
-        var boxColor = dataObject.categories;
-        console.log(boxColor);
-        var box = document.getElementsByClassName('box')[i];
-    };
-    
-    for( var i = 0; i < boxColor.length; i++ ){
-		if(typeof(boxColor[i]) == highlighted){
-			box.className += " highlighted";
-		};
-	}
 }
 sepData();
+
+//dodanie klas dla poszczególnych wybranych elementów
+
+function addClass(){
+    for (var i = 0; i < 5; i++){
+        boxList = document.querySelectorAll('.box')[i];
+        var boxHeader = document.querySelectorAll('.header')[i];
+        console.log(boxList);
+        console.log(data[i].categories);
+        if(data[i].categories.includes(highlighted)){
+            boxList.className += " highlighted";
+        }
+        if(data[i].categories.includes(important)){
+            boxList.className += " important";
+        }
+        if(data[i].categories.includes(specialHeader)){
+            boxHeader.className += " special-header";
+        }
+    }
+}
+addClass();
