@@ -23,7 +23,7 @@ body {
 
 
 .modal {
-	display: none;
+    display: none;
 	background: #fff;
 	width: 200px;
 	position: absolute;
