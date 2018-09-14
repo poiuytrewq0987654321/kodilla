@@ -40,21 +40,29 @@ var specialHeader = 'special-header';
 var boxList;
 var body = document.getElementById('body');
 
-//tworzenie boxów z id
+//creating boxes
 
 function boxCreate() {
-    for (var i = 1; i < 6; i++) {
-
-        var box = '<div class="box"><div class="header"></div><div class="box-content"></div></div>';
-        body.innerHTML = box + body.innerHTML;
+    for (var i = 0; i < data.length; i++) {
+            var newBox = document.createElement('div');
+            newBox.className = 'box';
+            document.getElementById('body').appendChild(newBox);
+        
+            var newHeaderBox = document.createElement('div');
+            newHeaderBox.className = 'header';
+            document.getElementsByClassName('box')[i].appendChild(newHeaderBox);
+        
+            var newContentBox = document.createElement('div');
+            newContentBox.className = 'box-content';
+            document.getElementsByClassName('box')[i].appendChild(newContentBox);
     };
 }
 boxCreate();
 
-//rozłożenie danych z Data na poszczególne obiekty i dodanie: id/content/header
+//separate Data and add IDs/headers/content
 
 function sepData() {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < data.length; i++) {
         var dataObject = data[i];
 
         boxList = document.querySelectorAll('.box')[i];
@@ -69,21 +77,21 @@ function sepData() {
 }
 sepData();
 
-//dodanie klas dla poszczególnych wybranych elementów
+//add class for specific elements
 
 function addClass(){
-    for (var i = 0; i < 5; i++){
+    for (var i = 0; i < data.length; i++){
         boxList = document.querySelectorAll('.box')[i];
         var boxHeader = document.querySelectorAll('.header')[i];
         console.log(boxList);
         console.log(data[i].categories);
-        if(data[i].categories.includes(highlighted)){
+        if (data[i].categories.includes(highlighted)){
             boxList.className += " highlighted";
         }
-        if(data[i].categories.includes(important)){
+        if (data[i].categories.includes(important)){
             boxList.className += " important";
         }
-        if(data[i].categories.includes(specialHeader)){
+        if (data[i].categories.includes(specialHeader)){
             boxHeader.className += " special-header";
         }
     }
