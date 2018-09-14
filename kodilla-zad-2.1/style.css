@@ -45,10 +45,25 @@ body {
 
 .container {
     width: 300px;
-    color:orangered;
+    color:chartreuse;
     font-size:35px;
+    text-align: center;
 }
 
-.box{
+.button {
+  font-size: 22px;
+}
 
+.button-group {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
+}
+
+.flickity-page-dots {
+  display:none;
 }
