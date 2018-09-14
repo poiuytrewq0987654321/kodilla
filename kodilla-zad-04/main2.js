@@ -28,28 +28,16 @@ function cleanScore() {
     userPointsPlace.innerHTML = 0;
     compPointsPlace.innerHTML = 0;
     opisRozgrywki.innerHTML = '';
-    compChoicePlace.innerHTML ='';
+    compChoicePlace.innerHTML = '';
 }
-
 
 /* funkcja obsługująca randomowy wybór przez komputer */
 
 function computerChoice() {
-    compChoice = Math.floor((Math.random() * 3) + 1);
-    if (compChoice === 1) {
-        compChoicePlace.innerHTML = 'papier';
-    } else if (compChoice === 2) {
-        compChoicePlace.innerHTML = 'kamień';
-    } else if (compChoice === 3) {
-        compChoicePlace.innerHTML = 'nożyce';
-    }
+    compChoice = Math.floor((Math.random() * 3));
+    var posChoi = ['papier', 'kamień', 'nożyce'];
+    compChoicePlace.innerHTML = posChoi[compChoice];
 }
-
-/*
-compChoice = Math.floor((Math.random() * 3));
-var posChoi = ['papier','kamień','nożyce'];
-compChoicePlace.innerHTML = posChoi[compChoice];
-*/
 
 /* funkcja zliczająca punkty i wyświetlające je w panelu bocznym + komentarze w panelu dolnym */
 
@@ -62,7 +50,7 @@ function zliczaniePkt(pktCompa, pktUsera) {
         userPoints++;
         userPointsPlace.innerHTML = userPoints;
         return opisRozgrywki.innerHTML = 'punkt dla Ciebie!';
-    } 
+    }
     return opisRozgrywki.innerHTML = 'remis';
 }
 
@@ -89,23 +77,20 @@ newGameButton.addEventListener('click', function () {
 firstButton.addEventListener('click', function () {
 
     computerChoice();
-    zliczaniePkt(1, 3);
-    scoreWatch();
+    zliczaniePkt(0, 2);
+    setTimeout(scoreWatch, 1000);
 });
 
 secondButton.addEventListener('click', function () {
 
     computerChoice();
-    zliczaniePkt(2, 1);
-    scoreWatch();
+    zliczaniePkt(1, 0);
+    setTimeout(scoreWatch, 1000);
 });
 
 thirdButton.addEventListener('click', function () {
 
     computerChoice();
-    zliczaniePkt(3, 2);
-    scoreWatch();
+    zliczaniePkt(2, 1);
+    setTimeout(scoreWatch, 1000);
 });
-
-
-// wyciagnac do funkcji z 
