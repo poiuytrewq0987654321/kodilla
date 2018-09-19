@@ -36,6 +36,7 @@ var data = [
 var highlighted = 'highlighted';
 var important = 'important';
 var specialHeader = 'special-header';
+var dataLength = data.length;
 
 var boxList;
 var body = document.getElementById('body');
@@ -43,7 +44,7 @@ var body = document.getElementById('body');
 //creating boxes
 
 function boxCreate() {
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < dataLength; i++) {
             var newBox = document.createElement('div');
             newBox.className = 'box';
             document.getElementById('body').appendChild(newBox);
@@ -62,7 +63,7 @@ boxCreate();
 //separate Data and add IDs/headers/content
 
 function sepData() {
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < dataLength; i++) {
         var dataObject = data[i];
 
         boxList = document.querySelectorAll('.box')[i];
@@ -80,11 +81,10 @@ sepData();
 //add class for specific elements
 
 function addClass(){
-    for (var i = 0; i < data.length; i++){
+    for (var i = 0; i < dataLength; i++){
         boxList = document.querySelectorAll('.box')[i];
         var boxHeader = document.querySelectorAll('.header')[i];
-        console.log(boxList);
-        console.log(data[i].categories);
+
         if (data[i].categories.includes(highlighted)){
             boxList.className += " highlighted";
         }
