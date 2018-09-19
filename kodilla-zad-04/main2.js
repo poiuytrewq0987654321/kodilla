@@ -20,7 +20,7 @@ var compChoice;
 var rundNumber = prompt('witaj w grze papier/kamień/nożyce! Podaj ilość rund jakie chcesz rozegrać:');
 iloscRund.innerHTML = rundNumber;
 
-/* funkcja czyszczenia wyników i opisów */
+/* cleaning scores function */
 
 function cleanScore() {
     compPoints = 0;
@@ -31,7 +31,7 @@ function cleanScore() {
     compChoicePlace.innerHTML = '';
 }
 
-/* funkcja obsługująca randomowy wybór przez komputer */
+/* random choose by computer function */
 
 function computerChoice() {
     compChoice = Math.floor((Math.random() * 3));
@@ -39,7 +39,7 @@ function computerChoice() {
     compChoicePlace.innerHTML = posChoi[compChoice];
 }
 
-/* funkcja zliczająca punkty i wyświetlające je w panelu bocznym + komentarze w panelu dolnym */
+/* points and comments function */
 
 function zliczaniePkt(pktCompa, pktUsera) {
     if (compChoice == pktCompa) {
@@ -54,8 +54,8 @@ function zliczaniePkt(pktCompa, pktUsera) {
     return opisRozgrywki.innerHTML = 'remis';
 }
 
-// opoznienie wyswietlenia wyniku poprzez set timeout (np. 2000 czyli 2s)
-// wylaczyc mozliwosc naciskania buttonow poprzez funkcje: disable;
+
+/* score watch function */
 
 function scoreWatch() {
     if (compPoints == rundNumber) {
@@ -68,11 +68,14 @@ function scoreWatch() {
     }
 }
 
+/* click buttons function */
+
 newGameButton.addEventListener('click', function () {
     rundNumber = prompt('witaj w grze papier/kamień/nożyce! Podaj ilość rund jakie chcesz rozegrać:');
     iloscRund.innerHTML = rundNumber;
     cleanScore();
 });
+
 
 firstButton.addEventListener('click', function () {
 
