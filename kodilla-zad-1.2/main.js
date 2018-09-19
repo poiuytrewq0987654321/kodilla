@@ -8,39 +8,16 @@
     var showModal = function (event) {
         event.preventDefault();
         document.querySelector('#modal-overlay').classList.add('show');
-        var modalOne = document.getElementById("modal-one");
-        var modalTwo = document.getElementById("modal-two");
-        var modalThree = document.getElementById("modal-three");
 
+        var chooseClass = document.querySelectorAll(".modal");
+        for (var i = 0; i < chooseClass.length; i++) {
+            chooseClass[i].classList.remove('show');
+        }
+        var actualValue = this.hash;
 
+        var modalId = actualValue.substring(1);
 
-        var linkA = document.getElementsByTagName('a')[0].getAttribute('href');
-        var linkB = document.getElementsByTagName('a')[1].getAttribute('href');
-        var linkC = document.getElementsByTagName('a')[2].getAttribute('href');
-        console.log(linkA);
-        console.log(linkB);
-        console.log(linkC);
-
-        var elements = document.getElementsByTagName('a');
-        console.log(elements);
-
-        if (elements[0].onclick = function () {
-                {
-                    modalOne.classList.add('show');
-                }
-            });
-
-        if (elements[1].onclick = function () {
-                {
-                    modalTwo.classList.add('show');
-                }
-            });
-        if (elements[2].onclick = function () {
-                {
-                    modalThree.classList.add('show');
-                }
-            });
-
+        document.getElementById(modalId).classList.add('show');
     }
 
 
