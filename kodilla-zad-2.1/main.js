@@ -1,6 +1,6 @@
 'use strict';
 
-var elem = document.querySelector('.main-carousel');
+var elem = document.querySelector('.carousel');
 var flkty = new Flickity(elem, {
     // options
     cellAlign: 'left',
