@@ -76,24 +76,15 @@ newGameButton.addEventListener('click', function () {
     cleanScore();
 });
 
-
-firstButton.addEventListener('click', function () {
-
+function playButtons(one, two, three){
     computerChoice();
-    zliczaniePkt(0, 2);
-    setTimeout(scoreWatch, 1000);
-});
+    zliczaniePkt(one, two);
+    setTimeout(scoreWatch, three);    
+}
 
-secondButton.addEventListener('click', function () {
 
-    computerChoice();
-    zliczaniePkt(1, 0);
-    setTimeout(scoreWatch, 1000);
-});
+firstButton.addEventListener('click', playButtons(0,2,1000));
 
-thirdButton.addEventListener('click', function () {
+secondButton.addEventListener('click', playButtons(1,0,1000));
 
-    computerChoice();
-    zliczaniePkt(2, 1);
-    setTimeout(scoreWatch, 1000);
-});
+thirdButton.addEventListener('click', playButtons(2,1,1000));
