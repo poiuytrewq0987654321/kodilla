@@ -1,12 +1,6 @@
 'use strict';
 
 var elem = document.querySelector('.carousel');
-var flkty = new Flickity(elem, {
-    // options
-    cellAlign: 'left',
-    contain: true
-});
-
 
 var flkty = new Flickity('.carousel');
 var buttonGroup = document.querySelector('.button-group');
