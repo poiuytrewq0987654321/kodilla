@@ -1,0 +1,11 @@
+.quote {
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.author {
+    width: 400px;
+    height: 40px;
+    border: 1px solid black;
+}
