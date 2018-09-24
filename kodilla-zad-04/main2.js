@@ -83,8 +83,8 @@ function playButtons(one, two, three){
 }
 
 
-firstButton.addEventListener('click', playButtons(0,2,1000));
+firstButton.addEventListener('click', function() {playButtons(0,2,1000)});
 
-secondButton.addEventListener('click', playButtons(1,0,1000));
+secondButton.addEventListener('click', function() {playButtons(1,0,1000)});
 
-thirdButton.addEventListener('click', playButtons(2,1,1000));
+thirdButton.addEventListener('click', function() {playButtons(2,1,1000)});
