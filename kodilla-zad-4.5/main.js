@@ -15,12 +15,22 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    var data = input[0];
-
+    var data;
+    if (data == '') {
+        document.querySelector('.quote').innerText = "brak cytatu";
+        document.querySelector('.author').innerText = "brak autora";
+    } else {
+        data = input[0];
+    }
     var dataElement = document.createElement('div');
     dataElement.innerHTML = data.content;
     var quoteText = dataElement.innerText.trim();
     var quoteAuthor = data.title;
+
+
+
+
+
     var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
 
     if (!quoteAuthor.length) {
@@ -37,9 +47,9 @@ function createTweet(input) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     getQuote();
-    document.querySelector('.trigger').addEventListener('click', function() {
+    document.querySelector('.trigger').addEventListener('click', function () {
         getQuote();
     });
 });
