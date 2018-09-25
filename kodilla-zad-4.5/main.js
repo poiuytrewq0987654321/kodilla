@@ -15,8 +15,8 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    var data;
-    if (data == '') {
+    var data = input[0];
+    if (!data.length)  {
         document.querySelector('.quote').innerText = "brak cytatu";
         document.querySelector('.author').innerText = "brak autora";
     } else {
